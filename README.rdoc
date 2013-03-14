@@ -39,7 +39,7 @@ or
 The multilang translations are stored in the same model attributes (eg. title):
 
 You may need to create migration for Post as usual, but multilang attributes should be in hstore type:
-  
+
   create_table(:posts) do |t|
     t.hstore :title
     t.timestamps
@@ -80,7 +80,7 @@ or
 
 Also, you may ise same hashes with setters:
 
-  post.title = {:en => 'Multilang rocks!', :lv => 'Multilang rulle!'} 
+  post.title = {:en => 'Multilang rocks!', :lv => 'Multilang rulle!'}
 
 == Attribute methods
 
@@ -102,7 +102,7 @@ The value from "any" method returns value for I18n.current_locale or, if value i
 Multilang has some validation features:
 
   multilang :title, :length => 100  #define maximal length validator
-  multilang :title, :required => true #define requirement validator 
+  multilang :title, :required => true #define requirement validator
   multilang :title, :format => /regexp/ #define validates_format_of validator
 
 == Tests
@@ -111,17 +111,17 @@ Test runs using a temporary database in your local PostgreSQL server:
 
 Create a test database:
 
-  $ createdb multilang-hstore-test
+  $ createdb multilang_hstore_test
 
 Create the [hstore extension](http://www.postgresql.org/docs/9.1/static/sql-createextension.html):
-  psql -d multilang-hstore-test -c "CREATE EXTENSION IF NOT EXISTS hstore"
+  psql -d multilang_hstore_test -c "CREATE EXTENSION IF NOT EXISTS hstore"
 
 Create the role *postgres* if necessary:
 
-  $ createuser -s -r postgres 
+  $ createuser -s -r postgres
 
 Finally, you can run your tests:
-  
+
   rspec
 
 == Bugs and Feedback

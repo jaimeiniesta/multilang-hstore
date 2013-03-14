@@ -10,7 +10,7 @@ require 'multilang-hstore'
 require 'logger'
 
 ActiveRecord::Base.logger = Logger.new(nil)
-ActiveRecord::Base.establish_connection(:adapter => "postgresql", :database => "multilang-hstore-test", :host=>'127.0.0.1', :user=>'postgres')
+ActiveRecord::Base.establish_connection(:adapter => "postgresql", :database => "multilang_hstore_test", :host=>'127.0.0.1', :user=>'postgres')
 
 I18n.available_locales = [:lv, :ru]
 I18n.locale = I18n.default_locale = :lv

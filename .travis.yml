@@ -1,6 +1,6 @@
 language: ruby
 before_script:
-  - psql -c 'CREATE DATABASE multilang-hstore-test;' -U postgres
+  - psql -c 'CREATE DATABASE multilang_hstore_test;' -U postgres
 env:
   - RAILS_3_1=true
   - RAILS_3_2=true
