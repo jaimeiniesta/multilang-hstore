@@ -1,3 +1,9 @@
+language: ruby
+before_script:
+  - psql -c 'CREATE DATABASE multilang-hstore-test;' -U postgres
+env:
+  - RAILS_3_1=true
+  - RAILS_3_2=true
 rvm:
   - 1.8.7
   - 1.9.2
